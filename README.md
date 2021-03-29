@@ -1,0 +1,2 @@
+# CodingExercises
+Fun Coding Exercises
