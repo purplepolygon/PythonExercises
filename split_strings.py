@@ -1,5 +1,5 @@
 # For a given string, split into a list of two characters. If there are an odd number of characters, append _:
-# Ex: Given "bandanas return ["ba", "nd", "an", "as"], given "Hello" return ["He", "ll", "o_"] 
+# Ex: Given "bandanas" return ["ba", "nd", "an", "as"], given "Hello" return ["He", "ll", "o_"]
 
 
 def solution(s):
@@ -18,4 +18,4 @@ def solution(s):
             m += 2
             n += 2
         new_list.append(s[len(s) - 1] + "_")
-    return(new_list)
+    return new_list
