@@ -13,6 +13,5 @@ def two_sum(nums, target):
                 continue
 
 
-
 if __name__ == '__main__':
     print(two_sum([3, 2, 3, 7, 15, 22, 9, 8], 17))
