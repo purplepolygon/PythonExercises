@@ -17,4 +17,4 @@ def is_unique(unique_string):
     return True
 
 
-print(is_unique("compCwtn"))
+print(is_unique("comp3wtn"))
