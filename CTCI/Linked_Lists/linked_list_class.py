@@ -1,7 +1,4 @@
-class Node:
-    def __init__(self, data):
-        self.data = data
-        self.next = None
+# Used to quickly generate generic linked list for rest of problems in this set
 
 
 class LinkedList:
@@ -20,3 +17,5 @@ def linked_list_creator(regular_list):
 
 if '__name__' == '__main__':
     pass
+else:
+    print("LinkedList created")
