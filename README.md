@@ -14,10 +14,14 @@ That is currently my most recent and best work.
 
 There are currently 4 sections:
 
-###I. Cracking the coding interview
-###II. MIT 6.0001
-###III. Old - Codewars
-###IV. Project Euler
+### I. Cracking the coding interview
+
+### II. MIT 6.0001
+
+### III. Old - Codewars
+
+### IV. Project Euler
+
 
 ## Future plans
 
