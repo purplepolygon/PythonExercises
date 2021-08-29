@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-# If the solution is > size of a 32 bit integer, return 0
+# If the solution is > size of a 32 bit integer, return 0. We are reversing an integer, x is an integer.
 
 
 def reverse(x):
     listed = [char for char in str(x)]
+    # For negative numbers
     if listed[0] == "-":
         listed.remove(listed[0])
         listed.reverse()
@@ -22,4 +23,6 @@ def reverse(x):
 
 
 if __name__ == "__main__":
-    print(reverse(1534236469))
+    print(reverse(1534236469))  # 0 as the reverse is > 2^31
+    print(reverse(13489))
+    print(reverse(98411111))
