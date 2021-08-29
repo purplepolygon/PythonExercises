@@ -10,16 +10,16 @@ While these files took me hours and hours to go initially, they are much much ea
 
 ## Todo?
 
-Perhaps I may refactor and write unit tests. Probably not though.
+Perhaps I may refactor and write tests demonstrating edge cases. Probably not though since these were submitted through the website.
 
 Update: After writing this Readme and checking to see which files are actually completed, I went ahead and refactored most of them. No tests or timing or anything crazy though!
 
 
 ## Status:
 
-Descending_order:
+Descending_order: Complete
 
-Digit_sums:
+Digit_sums: Complete
 
 Find_divisors: Complete
 
@@ -36,3 +36,7 @@ Split_strings: Complete
 Two_sum: Complete
 
 Validate_pins: Complete
+
+## Future plans
+
+None currently to continue with their website, but you never know. 
