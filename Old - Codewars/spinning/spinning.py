@@ -2,11 +2,9 @@
 # Reverse all words with length of 6 or more in a sentence.
 
 
-sentence_input = input("Please type a sentence: ")
-new_strings = []
-
-
-def spin_words(sentence):
+def spin_words():
+    new_strings = []
+    sentence = input("Please type a sentence: ")
     for i in sentence.split():
         if len(i) >= 6:
             new_string = i.replace(i, i[::-1])
@@ -14,7 +12,10 @@ def spin_words(sentence):
         elif len(i) < 6:
             new_string = i
             new_strings.append(new_string)
+    spun_sentence = " ".join(new_strings)
+    print(spun_sentence)
+    return spun_sentence
 
 
-spin_words(sentence_input)
-print(" ".join(new_strings))
+if __name__ == '__main__':
+    spin_words()

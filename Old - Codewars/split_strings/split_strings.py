@@ -3,20 +3,29 @@
 # Ex: Given "bandanas" return ["ba", "nd", "an", "as"], given "Hello" return ["He", "ll", "o_"]
 
 
-def solution(s):
-    s = [x for x in s]
+def split_strings(given_string):
+    given_string = [char for char in given_string]
     new_list = []
-    m = 0
-    n = 1
-    if len(s) % 2 == 0:
-        while n < len(s):
-            new_list.append(s[m] + s[n])
-            m += 2
-            n += 2
-    elif len(s) % 2 == 1:
-        while n < len(s) - 1:
-            new_list.append(s[m] + s[n])
-            m += 2
-            n += 2
-        new_list.append(s[len(s) - 1] + "_")
+    pointer_one = 0
+    pointer_two = 1
+    if len(given_string) % 2 == 0:
+        while pointer_two < len(given_string):
+            new_list.append(given_string[pointer_one] + given_string[pointer_two])
+            pointer_one += 2
+            pointer_two += 2
+    elif len(given_string) % 2 == 1:
+        while pointer_two < len(given_string) - 1:
+            new_list.append(given_string[pointer_one] + given_string[pointer_two])
+            pointer_one += 2
+            pointer_two += 2
+        new_list.append(given_string[len(given_string) - 1] + "_")
+    print(new_list)
     return new_list
+
+
+if __name__ == '__main__':
+    split_strings("Banana")  # ['Ba', 'na', 'na']
+    split_strings("Banananananas")  # ['Ba', 'na', 'na', 'na', 'na', 'na', 's_']
+    split_strings("aB")  # ['aB']
+    split_strings("a")  # ['a_']
+    split_strings(" ")  # [' _']

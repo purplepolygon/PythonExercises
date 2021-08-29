@@ -10,17 +10,29 @@ While these files took me hours and hours to go initially, they are much much ea
 
 ## Todo?
 
-Perhaps I may refactor and write unit tests. Probably not though. 
+Perhaps I may refactor and write unit tests. Probably not though.
+
+Update: After writing this Readme and checking to see which files are actually completed, I went ahead and refactored most of them. No tests or timing or anything crazy though!
+
 
 ## Status:
 
 Descending_order:
+
 Digit_sums:
+
 Find_divisors:
+
 Find_outlier:
+
 Phone_number_format:
+
 Reverse_integer:
-Spinning:
-Split_strings:
+
+Spinning: Complete
+
+Split_strings: Complete
+
 Two_sum: Complete
+
 Validate_pins: Complete
