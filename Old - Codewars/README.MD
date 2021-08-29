@@ -21,13 +21,13 @@ Descending_order:
 
 Digit_sums:
 
-Find_divisors:
+Find_divisors: Complete
 
-Find_outlier:
+Find_outlier: Complete
 
-Phone_number_format:
+Phone_number_format: Complete
 
-Reverse_integer:
+Reverse_integer: Complete
 
 Spinning: Complete
 
