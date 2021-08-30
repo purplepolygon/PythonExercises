@@ -15,4 +15,3 @@ def largest_prime(n):
 
 
 largest_prime(600851475143)
-

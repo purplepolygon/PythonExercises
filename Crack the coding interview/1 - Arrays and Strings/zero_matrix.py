@@ -21,5 +21,11 @@ def zero_matrix(matrix):
     return matrix
 
 
-test_matrix = [[1,0,6,5,8], [1,4,9,1,4], [0,2,3,4,5], [1,4,5,2,8], [9,4,2,1,0]]
+test_matrix = [
+    [1, 0, 6, 5, 8],
+    [1, 4, 9, 1, 4],
+    [0, 2, 3, 4, 5],
+    [1, 4, 5, 2, 8],
+    [9, 4, 2, 1, 0],
+]
 print(zero_matrix(test_matrix))

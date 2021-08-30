@@ -17,5 +17,5 @@ def spin_words():
     return spun_sentence
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     spin_words()

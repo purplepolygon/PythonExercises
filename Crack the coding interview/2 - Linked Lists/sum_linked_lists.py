@@ -17,7 +17,7 @@ def sum_linked_lists(ll_one, ll_two):
     ll_two.first = ll_two.next.first
     digit_two = int(ll_one.first) + int(ll_two.first)
     ll_one.first = ll_one.next.next.first
-    ll_two.first= ll_two.next.next.first
+    ll_two.first = ll_two.next.next.first
     digit_one = int(ll_one.first) + int(ll_two.first)
     digit_four = 0
     print(type(digit_two))

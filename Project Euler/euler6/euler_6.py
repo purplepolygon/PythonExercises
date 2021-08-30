@@ -5,12 +5,12 @@
 def sum_squares(n):
     total, s_total = 0, 0
     for x in range(n + 1):
-        total += x*x
+        total += x * x
 
     for x in range(n + 1):
         s_total += x
 
-    s_total = s_total**2
+    s_total = s_total ** 2
     print(s_total - total)
 
 

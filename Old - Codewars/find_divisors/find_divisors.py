@@ -12,7 +12,7 @@ def find_divisors(num):
     for x in range(2, int(math.sqrt(num)) + 1):
         if num % x == 0:
             divisors.append(x)
-            if x*x != num:  # Find the corresponding divisor
+            if x * x != num:  # Find the corresponding divisor
                 divisors.append(int(num / x))
 
     if len(divisors) == 0:
@@ -23,7 +23,7 @@ def find_divisors(num):
         return divisors
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # find_divisors(1)
     find_divisors(2)
     # find_divisors(3)

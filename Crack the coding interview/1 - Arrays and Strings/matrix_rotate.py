@@ -24,7 +24,11 @@ def matrix_rotator(matrix):
     return new_matrix
 
 
-matrix = [['a', 'b', 'c', 'd'], ['e', 'f', 'g', 'h'], ['i', 'j', 'k', 'l'], ['m', 'n', 'o', 'p']]\
-
+matrix = [
+    ["a", "b", "c", "d"],
+    ["e", "f", "g", "h"],
+    ["i", "j", "k", "l"],
+    ["m", "n", "o", "p"],
+]
 
 print(matrix_rotator(matrix))

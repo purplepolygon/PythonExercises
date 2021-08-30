@@ -23,7 +23,7 @@ def split_strings(given_string):
     return new_list
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     split_strings("Banana")  # ['Ba', 'na', 'na']
     split_strings("Banananananas")  # ['Ba', 'na', 'na', 'na', 'na', 'na', 's_']
     split_strings("aB")  # ['aB']

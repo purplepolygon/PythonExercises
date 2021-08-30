@@ -8,7 +8,7 @@ import math
 def triplet_finder():
     for x in range(1, 999):
         for y in range(1, 999):
-            test = x**2 + y**2
+            test = x ** 2 + y ** 2
             if math.sqrt(test) + x + y == 1000:
                 return x * y * math.sqrt(test)
 

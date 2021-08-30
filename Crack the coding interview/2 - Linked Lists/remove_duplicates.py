@@ -35,4 +35,3 @@ linked_list = linked_list.next
 print(linked_list.first)
 linked_list = linked_list.next
 print(linked_list.first)
-

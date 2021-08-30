@@ -27,7 +27,6 @@ def one_away(string1, string2):
                 continue
         return False
 
-
     if len(string1) - len(string2) == -1:  # Deletion case
         ins_check = 0
         m = 0
@@ -74,4 +73,3 @@ def one_away(string1, string2):
 # print(one_away("llmmmm", "llmmmm"))
 # print(one_away("lzpp", "lzdd"))
 print(one_away("fruit", "fruity"))
-

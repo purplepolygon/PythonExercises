@@ -7,16 +7,18 @@
 
 
 def money_saved(guess_ideal_portion):
-    ideal_portion = guess_ideal_portion * .0001
+    ideal_portion = guess_ideal_portion * 0.0001
     annual_salary = 150000
     monthly_salary = annual_salary / 12
     months = 0
-    semi_annual_raise = .07
-    annual_rate_of_return = .04
+    semi_annual_raise = 0.07
+    annual_rate_of_return = 0.04
     monthly_rate_of_return = annual_rate_of_return / 12
     current_savings = 0
     while months < 36:
-        current_savings += (monthly_salary * ideal_portion) + (current_savings * monthly_rate_of_return)
+        current_savings += (monthly_salary * ideal_portion) + (
+            current_savings * monthly_rate_of_return
+        )
         months += 1
         if months % 6 == 0:
             monthly_salary += semi_annual_raise * monthly_salary
@@ -51,5 +53,5 @@ def searcher():
         return guess_ideal_portion, counter
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(searcher())

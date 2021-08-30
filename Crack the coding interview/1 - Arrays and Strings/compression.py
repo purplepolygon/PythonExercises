@@ -11,11 +11,17 @@ def compressor(compressible):
             compressed_list.append(uncompressed_list[x])
             continue
         elif x >= 1:
-            if x == len(uncompressed_list) - 1 and uncompressed_list[x] == uncompressed_list[x - 1]:
+            if (
+                x == len(uncompressed_list) - 1
+                and uncompressed_list[x] == uncompressed_list[x - 1]
+            ):
                 repetition_counter += 1
                 compressed_list.append(str(repetition_counter))
                 break
-            if x == len(uncompressed_list) - 1 and uncompressed_list[x] != uncompressed_list[x - 1]:
+            if (
+                x == len(uncompressed_list) - 1
+                and uncompressed_list[x] != uncompressed_list[x - 1]
+            ):
                 compressed_list.append(str(repetition_counter))
                 compressed_list.append(uncompressed_list[x])
                 compressed_list.append("1")

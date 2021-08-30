@@ -49,6 +49,3 @@ print(shoot)
 print("hek")
 print(shoot.first)
 print(shoot.next.first)
-
-
-

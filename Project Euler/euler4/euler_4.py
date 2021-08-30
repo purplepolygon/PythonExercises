@@ -2,6 +2,7 @@
 # Find the largest palindrome made from 2x 3-digit numbers
 # 91 x 99 = 9009
 
+
 def palindrome_check(number):
     if str(number)[::1] == str(number)[::-1]:
         return True

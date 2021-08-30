@@ -8,7 +8,7 @@ def solution(number):
     for x in new_list:
         if x % 3 == 0 or x % 5 == 0:
             counter += x
-    return(counter)
+    return counter
 
 
 solution(5000)

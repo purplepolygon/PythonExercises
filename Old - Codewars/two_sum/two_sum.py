@@ -16,7 +16,7 @@ def two_sum(nums, target):
     raise Exception("No two numbers in this array add up to the target")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(two_sum([3, 2, 3, 7, 15, 22, 9, 8], 37))  # [4, 5]
     print(two_sum([3, 2, 3, 7, 15, 22, 9, 8], 17))  # [4, 5]
     print(two_sum([3, 2, 3, 7, 15, 22, 9, 8], 77))  # Error

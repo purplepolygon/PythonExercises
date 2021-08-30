@@ -6,7 +6,7 @@
 from linked_list_class import linked_list_creator
 
 
-node_list = ["a", "b", "c",]
+node_list = ["a", "b", "c"]
 linked_list = linked_list_creator(node_list)
 
 

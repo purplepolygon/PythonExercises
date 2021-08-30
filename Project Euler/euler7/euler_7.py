@@ -7,7 +7,7 @@ def primenumberfinder():
     prime_list = [2]
     x = 8
     while len(prime_list) < 100:
-        for i in range(2, int(x/2)):
+        for i in range(2, int(x / 2)):
             if x % i == 0:
                 x += 1
                 break
