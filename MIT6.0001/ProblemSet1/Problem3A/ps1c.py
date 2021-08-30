@@ -11,8 +11,8 @@ def money_saved(guess_ideal_portion):
     annual_salary = 150000
     monthly_salary = annual_salary / 12
     months = 0
-    semi_annual_raise = 0.07
-    annual_rate_of_return = 0.04
+    semi_annual_raise = .07
+    annual_rate_of_return = .04
     monthly_rate_of_return = annual_rate_of_return / 12
     current_savings = 0
     while months < 36:

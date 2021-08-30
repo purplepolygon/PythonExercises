@@ -15,7 +15,7 @@ def linked_list_creator(regular_list):
         return LinkedList(regular_list[0], linked_list_creator(regular_list[1:]))
 
 
-if "__name__" == "__main__":
+if __name__ == "__main__":
     pass
 else:
     print("LinkedList created")

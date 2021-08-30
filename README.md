@@ -31,9 +31,49 @@ Right now it's almost all python however I can code in Javascript or php as well
 
 I'm debating whether or not to start making versions, but to be frank it seems a bit silly as this repo isn't really usable software in the traditional sense. I do like the idea of having a nice, beautiful repository but at the same time too much salt can ruin a dish as well. Especially since this is coursework essentially, though I do believe some of these functions may be utilized in the future. For instance, the MIT downpayment calculator is pretty nifty.
 
-## First time running pre-commit
+## Pre-Commit
 
-If you'd like to see the full pre-commit log the first time I ran it 8-29-2021. How fun! I think I'll be running this periodically to practice my style and make sure I have it down.
+### First Time
+If you'd like to see the full pre-commit log the first time I ran it 8-29-2021 you can chexk the very bottom of this file. How fun! I think I'll be running this periodically to practice my style and make sure I have it down. It caught a few errors that, had I decided to refactor Euler's after refactoring my old directory, would have been avoided. 
+
+Fix End of Files.........................................................Failed
+14 files changed out of 73
+- HOWEVER - 
+Exactly half of those were .MD or .txt files which do not need the same specs. 
+
+Trim Trailing Whitespace.................................................Failed
+4 files changed out of 73
+- HOWEVER -
+1 of them was a .MD, and the other 3 came from MIT, not me =) !!
+
+black....................................................................Failed
+31 files changed out of 73
+
+Black prettifier:
+Definitely good to refresh format especially switching between languages. I forgot that additional parameters for if+and can be formatted as such:
+
+```       -     if x == len(uncompressed_list) - 1 and uncompressed_list[x] == uncompressed_list[x - 1]:
+
+          +  if (
+                x == len(uncompressed_list) - 1
+                and uncompressed_list[x] == uncompressed_list[x - 1]
+            ):
+```
+Similar for matrices as well : 
+
+```
+Deleted: matrix = [['a', 'b', 'c', 'd'], ['e', 'f', 'g', 'h'], ['i', 'j', 'k', 'l'], ['m', 'n', 'o', 'p']]\
+
+Added:
+matrix = [
+    ["a", "b", "c", "d"],
+    ["e", "f", "g", "h"],
+    ["i", "j", "k", "l"],
+    ["m", "n", "o", "p"],
+]
+```
+
+Overall running pre-commit was great and I learned a good amount. I'll be adding more hooks as time goes and hopefully bring my ratio of errors down..
 
 ## Resources I recommend:
 
@@ -49,10 +89,10 @@ https://automatetheboringstuff.com/ - Automate the Boring Stuff is absolutely fa
 Get 2-3 wins from a script you wrote and you'll be hooked!
 
 ## Full pre-commit log
-
+```
 (venv) ...\PythonExercises>pre-commit sample-config
-# See https://pre-commit.com for more information
-# See https://pre-commit.com/hooks.html for more hooks
+ See https://pre-commit.com for more information
+ See https://pre-commit.com/hooks.html for more hooks
 repos:
 -   repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v3.2.0
@@ -145,4 +185,4 @@ reformatted ...\PythonExercises\Project Euler\euler9\euler_9.py
 reformatted ...\PythonExercises\Project Euler\euler8\euler_8.py
 All done! \u2728 \U0001f370 \u2728
 31 files reformatted, 42 files left unchanged.
-
+```
