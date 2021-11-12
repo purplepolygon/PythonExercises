@@ -38,3 +38,4 @@ practice_grid = [
 
 
 def left_to_right(practice_grid):
+    pass
