@@ -10,3 +10,4 @@
 # For example, 342 (three hundred and forty-two) contains 23 letters,
 # 115 (one hundred and fifteen) contains 20 letters.
 # The use of "and" when writing out numbers is in compliance with British usage.
+# TODO: Finish later
