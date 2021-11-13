@@ -27,15 +27,57 @@ grid = [
     [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48],
 ]
 
-practice_grid = [
-    [1, 2, 3, 4, 5, 6],
-    [1, 2, 3, 4, 5, 6],
-    [1, 2, 3, 4, 5, 6],
-    [1, 2, 3, 4, 5, 6],
-    [1, 2, 3, 4, 5, 6],
-    [1, 2, 3, 4, 5, 6],
-]
+# grid = [
+#     [1, 2, 3, 4, 5, 6],
+#     [1, 2, 3, 4, 5, 6],
+#     [1, 6, 3, 7, 5, 6],
+#     [1, 2, 6, 4, 5, 6],
+#     [1, 6, 3, 6, 5, 6],
+#     [6, 2, 3, 7, 19, 7],
+# ]
 
 
-def left_to_right(practice_grid):
-    pass
+def largest_product_grid_finder(grid):
+    largest_product = 0
+    """Left to right iteration"""
+    for j in range(0, len(grid)):
+        i = 0
+        while i < int(len(grid)) - 3:
+            product = grid[j][i] * grid[j][i+1] * grid[j][i+2] * grid[j][i+3]
+            if product > largest_product:
+                largest_product = product
+            i += 1
+            continue
+    """Up and down iteration"""
+    for j in range(0, len(grid) - 3):
+        i = 0
+        while i < int(len(grid)):
+            product = grid[j][i] * grid[j+1][i] * grid[j+2][i] * grid[j+3][i]
+            if product > largest_product:
+                largest_product = product
+            i += 1
+            continue
+    """Diagonal forward slash iteration"""
+    for j in range(0, len(grid) - 3):
+        i = 0
+        while i < int(len(grid) - 3):
+            product = grid[j+3][i] * grid[j+2][i+1] * grid[j+1][i+2] * grid[j][i+3]
+            if product > largest_product:
+                largest_product = product
+            i += 1
+            continue
+    """Diagonal back slash iteration"""
+    for j in range(0, len(grid) - 3):
+        i = 0
+        while i < int(len(grid) - 3):
+            product = grid[j][i] * grid[j+1][i+1] * grid[j+2][i+2] * grid[j+3][i+3]
+            if product > largest_product:
+                largest_product = product
+            i += 1
+            continue
+    return largest_product
+
+
+if __name__ == '__main__':
+    print(largest_product_grid_finder(grid))
+    # 70600674
