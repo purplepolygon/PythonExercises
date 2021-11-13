@@ -13,4 +13,6 @@ def triplet_finder():
                 return x * y * math.sqrt(test)
 
 
-print(triplet_finder())
+if __name__ == '__main__':
+    print(triplet_finder())
+    # 31875000.0
