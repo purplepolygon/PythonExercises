@@ -9,7 +9,7 @@ import math
 import random
 import string
 
-VOWELS = "aeiou"
+VOWELS = "aeiou*"
 CONSONANTS = "bcdfghjklmnpqrstvwxyz"
 HAND_SIZE = 7
 
@@ -179,11 +179,13 @@ def deal_hand(n):
     returns: dictionary (string -> int)
     """
 
-    hand = {}
-    num_vowels = int(math.ceil(n / 3))
+    hand = {"*": 1, }
+    num_vowels = int(math.ceil(n / 3)) - 1
 
     for i in range(num_vowels):
         x = random.choice(VOWELS)
+        while x == "*":
+            x = random.choice(VOWELS)
         hand[x] = hand.get(x, 0) + 1
 
     for i in range(num_vowels, n):
