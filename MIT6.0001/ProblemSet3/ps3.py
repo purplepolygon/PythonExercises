@@ -88,9 +88,12 @@ def get_frequency_dict(sequence):
 # (end of helper code)
 # -----------------------------------
 
+
 #
 # Problem #1: Scoring a word
 #
+
+
 def get_word_score(word, n):
     """
     Returns the score for a word. Assumes the word is a
@@ -116,13 +119,27 @@ def get_word_score(word, n):
     n: int >= 0
     returns: int >= 0
     """
-
-    pass  # TO DO... Remove this line when you implement this function
+    word = word.lower()
+    first_component = 0
+    word_array = [x for x in word]
+    i = 0
+    second_component = ((7 * len(word_array)) - (3 * (n - len(word_array))))
+    while i < len(word_array):
+        for letter in word_array:
+            first_component += SCRABBLE_LETTER_VALUES[word[i]]
+            i += 1
+            continue
+    if second_component > 1:
+        return first_component * second_component
+    else:
+        return first_component
 
 
 #
 # Make sure you understand how this function works and what it does!
 #
+
+
 def display_hand(hand):
     """
     Displays the letters currently in the hand.
@@ -146,6 +163,8 @@ def display_hand(hand):
 # Make sure you understand how this function works and what it does!
 # You will need to modify this for Problem #4.
 #
+
+
 def deal_hand(n):
     """
     Returns a random hand containing n lowercase letters.
@@ -177,6 +196,8 @@ def deal_hand(n):
 #
 # Problem #2: Update a hand by removing letters
 #
+
+
 def update_hand(hand, word):
     """
     Does NOT assume that hand contains every letter in word at least as
@@ -195,13 +216,23 @@ def update_hand(hand, word):
     hand: dictionary (string -> int)
     returns: dictionary (string -> int)
     """
-
-    pass  # TO DO... Remove this line when you implement this function
+    word = word.lower()
+    word_letters = [x for x in word]
+    updated_hand = hand.copy()
+    i = 0
+    while i < len(word_letters):
+        for word in word_letters:
+            if word_letters[i] in updated_hand:
+                updated_hand[word_letters[i]] = updated_hand[word_letters[i]] - 1
+            i += 1
+    return updated_hand
 
 
 #
 # Problem #3: Test word validity
 #
+
+
 def is_valid_word(word, hand, word_list):
     """
     Returns True if word is in the word_list and is entirely
@@ -213,13 +244,28 @@ def is_valid_word(word, hand, word_list):
     word_list: list of lowercase strings
     returns: boolean
     """
-
-    pass  # TO DO... Remove this line when you implement this function
+    word = word.lower()
+    word_letters = [x for x in word]
+    updated_hand = hand.copy()
+    if word in word_list:
+        i = 0
+        while i < len(word_letters):
+            if word_letters[i] in updated_hand and updated_hand[word_letters[i]] != 0:
+                updated_hand[word_letters[i]] = updated_hand[word_letters[i]] - 1
+                i += 1
+                continue
+            else:
+                return False
+        return True
+    else:
+        return False
 
 
 #
 # Problem #5: Playing a hand
 #
+
+
 def calculate_handlen(hand):
     """
     Returns the length (number of letters) in the current hand.
