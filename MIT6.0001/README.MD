@@ -5,8 +5,13 @@ Basically computer science 101. Taught with python. Reason I started these lectu
 
 ### Problem set status
 
-Problem Set 1 - Complete
+Problem Set 1 - Complete 
+✔️
 
 Problem Set 2 - Complete
+✔️
 
-Problem set 3 - Not Complete
+Problem Set 3 - Complete
+✔️
+
+Problem Set 4 - Incomplete
