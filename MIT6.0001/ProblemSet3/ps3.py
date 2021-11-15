@@ -103,16 +103,16 @@ def get_word_score(word, n):
     lowercase letters, so you will have to handle uppercase and mixed case strings
     appropriately.
 
-	The score for a word is the product of two components:
+    The score for a word is the product of two components:
 
-	The first component is the sum of the points for letters in the word.
-	The second component is the larger of:
+    The first component is the sum of the points for letters in the word.
+    The second component is the larger of:
             1, or
-            7*wordlen - 3*(n-wordlen), where wordlen is the length of the word
+            7*word_len - 3*(n-word_len), where word_len is the length of the word
             and n is the hand length when the word was played
 
-	Letters are scored as in Scrabble; A is worth 1, B is
-	worth 3, C is worth 3, D is worth 2, E is worth 1, and so on.
+    Letters are scored as in Scrabble; A is worth 1, B is
+    worth 3, C is worth 3, D is worth 2, E is worth 1, and so on.
 
     word: string
     n: int >= 0
@@ -352,6 +352,7 @@ def play_hand(hand, wordlist):
             # Otherwise (the input is not two exclamation points):
         else:
             # If the word is valid:
+            i = 0
             if is_valid_word(potential_word, hand, wordlist):
                 word_score = get_word_score(potential_word, calculate_handlen(hand))
                 score += word_score
@@ -359,7 +360,6 @@ def play_hand(hand, wordlist):
                 # and the updated total score
                 print("You earned " + str(word_score) + " points!")
                 print("Current score: " + str(score))
-                i = 0
                 while i < len(potential_word):
                     if potential_word[i] in hand and hand[potential_word[i]] != 0:
                         hand[potential_word[i]] = hand[potential_word[i]] - 1
@@ -370,7 +370,6 @@ def play_hand(hand, wordlist):
                 # Reject invalid word (print a message)
                 print("Word is not valid. Please choose another")
                 # Update the user's hand by removing the letters of their inputted word
-                i = 0
                 while i < len(potential_word):
                     if potential_word[i] in hand and hand[potential_word[i]] != 0:
                         hand[potential_word[i]] = hand[potential_word[i]] - 1
@@ -387,7 +386,7 @@ def play_hand(hand, wordlist):
 
 
 #
-# procedure you will use to substitute a letter in a hand
+# Procedure you will use to substitute a letter in a hand
 #
 
 
@@ -413,8 +412,14 @@ def substitute_hand(hand, letter):
     letter: string
     returns: dictionary (string -> int)
     """
-
-    pass  # TO DO... Remove this line when you implement this function
+    sub_letter = input("Input letter to substituted: ")
+    new_letter = random.choice(VOWELS + CONSONANTS)
+    substituted_hand = hand.copy()
+    while new_letter == sub_letter or new_letter in hand:
+        new_letter = random.choice(VOWELS + CONSONANTS)
+    if sub_letter in substituted_hand:
+        substituted_hand[new_letter] = substituted_hand.pop(sub_letter)
+    return substituted_hand
 
 
 def play_game(word_list):
@@ -429,7 +434,7 @@ def play_game(word_list):
     * For each hand, before playing, ask the user if they want to substitute
       one letter for another. If the user inputs 'yes', prompt them for their
       desired letter. This can only be done once during the game. Once the
-      substitue option is used, the user should not be asked if they want to
+      substitute option is used, the user should not be asked if they want to
       substitute letters in the future.
 
     * For each hand, ask the user if they would like to replay the hand.
@@ -454,7 +459,8 @@ def play_game(word_list):
 # Build data structures used for entire session and play game
 # Do not remove the "if __name__ == '__main__':" line - this code is executed
 # when the program is run directly, instead of through an import statement
-#
+
+
 if __name__ == "__main__":
     word_list = load_words()
     play_game(word_list)
