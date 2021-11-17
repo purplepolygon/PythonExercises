@@ -3,7 +3,7 @@
 # Name: Purple Polygon
 
 
-def get_permutations(sequence):
+def get_permutations(sequence, i, j):
     '''
     Enumerate all permutations of a given string
 
@@ -16,25 +16,34 @@ def get_permutations(sequence):
     Returns: a list of all permutations of sequence
 
     Example:
-    >>> get_permutations('abc')
+    get_permutations('abc')
     ['abc', 'acb', 'bac', 'bca', 'cab', 'cba']
 
     Note: depending on your implementation, you may return the permutations in
     a different order than what is listed here.
     '''
+    # if len(sequence) == 0:
+    #     return [""]
+    sequence = [x for x in sequence]
+    list_of_permutations = []
+    for i in range(i, len(sequence)):
+        for j in range(i, len(sequence)):
+            sequence[i], sequence[j] = sequence[j], sequence[i]
+            list_of_permutations.append("".join(sequence))
+            j += 1
+        i += 1
+        get_permutations(sequence, i, j)
+    return list_of_permutations
 
-    pass #delete this line and replace with your code here
 
 if __name__ == '__main__':
-#    #EXAMPLE
-#    example_input = 'abc'
-#    print('Input:', example_input)
-#    print('Expected Output:', ['abc', 'acb', 'bac', 'bca', 'cab', 'cba'])
-#    print('Actual Output:', get_permutations(example_input))
-    
-#    # Put three example test cases here (for your sanity, limit your inputs
-#    to be three characters or fewer as you will have n! permutations for a 
-#    sequence of length n)
-
-    pass #delete this line and replace with your code here
-
+    print('Input: \"abc\"')
+    print('Expected Output:', ['abc', 'bac', 'cab', 'cab', 'cba', 'cba'])
+    print('Actual Output:', get_permutations("abc", 0, 0))
+    print('Input: \"yup\"')
+    print('Expected Output:', ['yup', 'uyp', 'pyu', 'pyu', 'puy', 'puy'])
+    print('Actual Output:', get_permutations("yup", 0, 0))
+    print('Input: \"dog\"')
+    print('Expected Output:', ['dog', 'odg', 'gdo', 'gdo', 'god', 'god'])
+    print('Actual Output:', get_permutations("dog", 0, 0))
+    get_permutations("abc", 0, 0)
